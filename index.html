@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма с блоками</title>
+    <style>
+        .block {
+            display: none;
+        }
+
+        .block.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="flex flex-col gap-8 min-w-screen min-h-screen md:justify-center items-center bg-slate-300/70 p-4">
+
+        <div class="text-2xl font-light">
+            Гражданско-патриотическое воспитание
+        </div>
+        <div class="w-full max-w-2xl min-h-screen md:min-h-fit bg-white shadow-lg rounded-2xl p-6">
+            <!-- Блок 1 -->
+            <div id="block1" class="block active">
+                <h2 class="text-2xl font-bold mb-4">Регистрация</h2>
+                <div class="mb-4">
+                    <label class=" text-sm font-medium text-gray-700">ФИО</label>
+                    <input type="text" id="fio"
+                        class="mt-1 w-full bg-slate-300/50 py-2 rounded-xl border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                </div>
+                <div class="mb-4">
+                    <label class=" text-sm font-medium text-gray-700">Группа</label>
+                    <input type="text" id="group"
+                        class="mt-1  w-full bg-slate-300/50 py-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                </div>
+                <div class="mb-4">
+                    <label class=" text-sm font-medium text-gray-700">Курс</label>
+                    <input type="number" id="course"
+                        class="mt-1  w-full bg-slate-300/50 py-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                </div>
+                <div class="mb-4">
+                    <label class=" text-sm font-medium text-gray-700">Форма обучения</label>
+                    <select id="form"
+                        class="mt-1  w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                        <option value="">Выберите форму обучения</option>
+                        <option value="очная">Очная</option>
+                        <option value="заочная">Заочная</option>
+                    </select>
+                </div>
+                <button onclick="validateAndNextBlock(1)"
+                    class="bg-indigo-600 w-full text-white px-4 py-2 rounded-xl py-4 shadow hover:bg-indigo-700 mt-4">
+                    Далее
+                </button>
+            </div>
+
+
+            <!-- Блок 2 -->
+            <div id="block2" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 1</h2>
+                <div id="questions" class="space-y-6"></div>
+                <button onclick="nextBlock(2)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+
+
+
+            <!-- Блок 3 -->
+            <div id="block3" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 2</h2>
+                <div id="questions2" class="space-y-6"></div>
+                <button onclick="nextBlock(3)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <!-- блок 4 -->
+            <div id="block4" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 3</h2>
+                <div id="questions3" class="space-y-6"></div>
+                <button onclick="nextBlock(4)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <!-- блок 5 -->
+            <div id="block5" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 4</h2>
+                <div id="questions4" class="space-y-6"></div>
+                <button onclick="nextBlock(5)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block6" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 5</h2>
+                <div id="questions5" class="space-y-6"></div>
+                <button onclick="nextBlock(6)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block7" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 6</h2>
+                <div id="questions6" class="space-y-6"></div>
+                <button onclick="nextBlock(7)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block8" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 7</h2>
+                <div id="questions7" class="space-y-6"></div>
+                <button onclick="nextBlock(8)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block9" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 8</h2>
+                <div id="questions8" class="space-y-6"></div>
+                <button onclick="nextBlock(9)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block10" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 9</h2>
+                <div id="questions9" class="space-y-6"></div>
+                <button onclick="nextBlock(10)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block11" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 10</h2>
+                <div id="questions10" class="space-y-6"></div>
+                <button onclick="nextBlock(11)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block12" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 11</h2>
+                <div id="questions11" class="space-y-6"></div>
+                <button onclick="nextBlock(12)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block13" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 12</h2>
+                <div id="questions12" class="space-y-6"></div>
+                <button onclick="nextBlock(13)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block14" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 13</h2>
+                <div id="questions13" class="space-y-6"></div>
+                <button onclick="nextBlock(14)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block15" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 14</h2>
+                <div id="questions14" class="space-y-6"></div>
+                <button onclick="nextBlock(15)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block16" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 15</h2>
+                <div id="questions15" class="space-y-6"></div>
+                <button onclick="nextBlock(16)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block17" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 16</h2>
+                <div id="questions16" class="space-y-6"></div>
+                <button onclick="nextBlock(17)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block18" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 17</h2>
+                <div id="questions17" class="space-y-6"></div>
+                <button onclick="nextBlock(18)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block19" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 18</h2>
+                <div id="questions18" class="space-y-6"></div>
+                <button onclick="nextBlock(19)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block20" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 19</h2>
+                <div id="questions19" class="space-y-6"></div>
+                <button onclick="nextBlock(20)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block21" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 20</h2>
+                <div id="questions20" class="space-y-6"></div>
+                <button onclick="nextBlock(21)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block22" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 21</h2>
+                <div id="questions21" class="space-y-6"></div>
+                <button onclick="nextBlock(22)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block23" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 22</h2>
+                <div id="questions22" class="space-y-6"></div>
+                <button onclick="nextBlock(23)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block24" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 23</h2>
+                <div id="questions23" class="space-y-6"></div>
+                <button onclick="nextBlock(24)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block25" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 24</h2>
+                <div id="questions24" class="space-y-6"></div>
+                <button onclick="nextBlock(25)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block26" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 25</h2>
+                <div id="questions25" class="space-y-6"></div>
+                <button onclick="nextBlock(26)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block27" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 26</h2>
+                <div id="questions26" class="space-y-6"></div>
+                <button onclick="nextBlock(27)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block28" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 27</h2>
+                <div id="questions27" class="space-y-6"></div>
+                <button onclick="nextBlock(28)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block29" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 28</h2>
+                <div id="questions28" class="space-y-6"></div>
+                <button onclick="nextBlock(29)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block30" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 29</h2>
+                <div id="questions29" class="space-y-6"></div>
+                <button onclick="nextBlock(30)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block31" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 30</h2>
+                <div id="questions30" class="space-y-6"></div>
+                <button onclick="nextBlock(31)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block32" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 31</h2>
+                <div id="questions31" class="space-y-6"></div>
+                <button onclick="nextBlock(32)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block33" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 32</h2>
+                <div id="questions32" class="space-y-6"></div>
+                <button onclick="nextBlock(33)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block34" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 33</h2>
+                <div id="questions33" class="space-y-6"></div>
+                <button onclick="nextBlock(34)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block35" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 34</h2>
+                <div id="questions34" class="space-y-6"></div>
+                <button onclick="nextBlock(35)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block36" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 35</h2>
+                <div id="questions35" class="space-y-6"></div>
+                <button onclick="nextBlock(36)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block37" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 36</h2>
+                <div id="questions36" class="space-y-6"></div>
+                <button onclick="nextBlock(37)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block38" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 37</h2>
+                <div id="questions37" class="space-y-6"></div>
+                <button onclick="nextBlock(38)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block39" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 38</h2>
+                <div id="questions38" class="space-y-6"></div>
+                <button onclick="nextBlock(39)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block40" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 39</h2>
+                <div id="questions39" class="space-y-6"></div>
+                <button onclick="nextBlock(40)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block41" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 40</h2>
+                <div id="questions40" class="space-y-6"></div>
+                <button onclick="nextBlock(41)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block42" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 41</h2>
+                <div id="questions41" class="space-y-6"></div>
+                <button onclick="nextBlock(42)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block43" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 42</h2>
+                <div id="questions42" class="space-y-6"></div>
+                <button onclick="nextBlock(43)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block44" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 43</h2>
+                <div id="questions43" class="space-y-6"></div>
+                <button onclick="nextBlock(44)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block45" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 44</h2>
+                <div id="questions44" class="space-y-6"></div>
+                <button onclick="nextBlock(45)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block46" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 45</h2>
+                <div id="questions45" class="space-y-6"></div>
+                <button onclick="nextBlock(46)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block47" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 46</h2>
+                <div id="questions46" class="space-y-6"></div>
+                <button onclick="nextBlock(47)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block48" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 47</h2>
+                <div id="questions47" class="space-y-6"></div>
+                <button onclick="nextBlock(48)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block49" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 48</h2>
+                <div id="questions48" class="space-y-6"></div>
+                <button onclick="nextBlock(49)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+            <div id="block50" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 49</h2>
+                <div id="questions49" class="space-y-6"></div>
+                <button onclick="nextBlock(50)"
+                    class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow hover:bg-indigo-700">
+                    Далее
+                </button>
+            </div>
+
+            <!-- Блок  -->
+            <div id="block51" class="block hidden">
+                <h2 class="text-2xl font-bold mb-4">Вопрос 50</h2>
+                <div id="questions50" class="space-y-6"></div>
+                <button onclick="submitForm()"
+                    class="bg-green-600 text-white px-4 py-2 rounded-md shadow hover:bg-green-700">
+                    Завершить
+                </button>
+            </div>
+        </div>
+        <div class="text-2xl font-light">
+    01.05.2025        
+</div>
+    </div>
+
+
+    <script>
+
+let wasHidden = false;
+
+  // Функция для перезагрузки страницы
+  function reloadPage() {
+    console.log("Обнаружен выход со страницы или переключение. Перезагрузка...");
+    // Можно добавить сообщение для пользователя перед перезагрузкой,
+    // но оно может не успеть отобразиться.
+    // alert("Вы покинули страницу квиза. Он будет перезапущен.");
+    window.location.reload();
+  }
+
+  // Добавляем слушатель события visibilitychange
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'hidden') {
+      // Пользователь переключился с этой вкладки или свернул окно
+      wasHidden = true;
+      console.log("Страница стала невидимой.");
+    } else if (document.visibilityState === 'visible' && wasHidden) {
+      // Пользователь вернулся на вкладку ПОСЛЕ того, как она была скрыта
+      reloadPage();
+    }
+  });
+  let windowLostFocus = false;
+
+// Функция для перезагрузки страницы
+function reloadQuiz() {
+  console.log("Обнаружено переключение на другую программу или потерю фокуса окном. Перезагрузка квиза...");
+  // Опционально: Показать сообщение перед перезагрузкой (может не успеть)
+  // alert("Вы покинули окно квиза. Квиз будет перезапущен.");
+  window.location.reload();
+}
+
+// Слушатель события ПОТЕРИ ФОКУСА ОКНОМ БРАУЗЕРА
+// Срабатывает, когда вы кликаете вне окна браузера или используете Alt+Tab и т.д.
+window.addEventListener('blur', function() {
+  console.log('Окно браузера потеряло фокус.');
+  windowLostFocus = true;
+});
+
+// Слушатель события ПОЛУЧЕНИЯ ФОКУСА ОКНОМ БРАУЗЕРА
+// Срабатывает, когда вы возвращаетесь в окно браузера
+window.addEventListener('focus', function() {
+  console.log('Окно браузера получило фокус.');
+  // Если фокус был ПОТЕРЯН перед этим
+  if (windowLostFocus) {
+    // Перезагружаем страницу, так как пользователь вернулся после ухода
+    reloadQuiz();
+    // Сбрасывать флаг не обязательно, т.к. страница перезагрузится
+    // windowLostFocus = false;
+  } else {
+    // Это может быть первоначальная загрузка или фокус без предварительной потери
+    console.log('Фокус получен без предварительной потери.');
+  }
+});
+
+// --- Ваш остальной JavaScript код для квиза ---
+console.log('Квиз инициализирован. Ожидание действий пользователя...');
+
+        // Массивы вопросов
+        const questionsBlock2 = [
+            {
+                question_title: "1.	Какими словами заканчивается Государственный гимн Республики Беларусь?",
+                answer_variants: [
+                    { answer_title: "а.	Слаўся, зямлі нашай светлае імя!", answer_id_correct: false },
+                    { answer_title: "б.	Вечна жывi i квiтней Беларусь!", answer_id_correct: true },
+                    { answer_title: "в.	Слаўся, народаў братэрскі саюз! ", answer_id_correct: false },
+                ]
+            }
+        ];
+
+        const questionsBlock3 = [
+            {
+                question_title: "2.	Сколько куплетов в Государственном гимне Республики Беларусь?",
+                answer_variants: [
+                    { answer_title: "3", answer_id_correct: true },
+                    { answer_title: "4", answer_id_correct: false },
+                    { answer_title: "2", answer_id_correct: false }
+                ]
+            }
+        ];
+
+        const questionsBlock4 = [
+            {
+                question_title: "3.	В эту международную организацию Беларусь вступила в 1945г.",
+                answer_variants: [
+                    { answer_title: "а.	ЮНЕСКО", answer_id_correct: false },
+                    { answer_title: "б.	ООН", answer_id_correct: true },
+                    { answer_title: "в.	ВОЗ", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock5 = [
+            {
+                question_title: "4.	В каком году Западная Беларусь была присоединена к БССР?",
+                answer_variants: [
+                    { answer_title: "а.	1922", answer_id_correct: false },
+                    { answer_title: "б.	1939", answer_id_correct: true },
+                    { answer_title: "в.	1934", answer_id_correct: false },
+
+                ]
+            }
+        ];
+        const questionsBlock6 = [
+            {
+                question_title: "5.	В этом национальном парке был положен конец СССР",
+                answer_variants: [
+                    { answer_title: "а.	Беловежская пуща.", answer_id_correct: true },
+                    { answer_title: "б.	Нарочанский парк.", answer_id_correct: false },
+                    { answer_title: "в.	Браславские озера.", answer_id_correct: false },
+
+                ]
+            }
+        ];
+        const questionsBlock7 = [
+            {
+                question_title: "6.	Республика Беларусь имеет границы с пятью странами. Какая из перечисленных стран является в этом списке лишней? ",
+                answer_variants: [
+                    { answer_title: "а.	Польша", answer_id_correct: false },
+                    { answer_title: "б.	Литва", answer_id_correct: false },
+                    { answer_title: "в.	Эстония.", answer_id_correct: true },
+
+                ]
+            }
+        ];
+        const questionsBlock8 = [
+            {
+                question_title: "7.	Как называется международный нефтепровод, проложенный на территории Гомельщины? ",
+                answer_variants: [
+                    { answer_title: "а.	«Голубой поток».", answer_id_correct: false },
+                    { answer_title: "б.	«Дружба».", answer_id_correct: true },
+                    { answer_title: "в. «Транснефть».", answer_id_correct: false },
+                
+                ]
+            }
+        ];
+        const questionsBlock9 = [
+            {
+                question_title: "8.	Этот мемориал жертв войны расположен в 65 км к северу от Минска",
+                answer_variants: [
+                    { answer_title: "а.	Тростенец.", answer_id_correct: false },
+                    { answer_title: "б.	Дальва.", answer_id_correct: false },
+                    { answer_title: "в.	Хатынь.", answer_id_correct: true },
+                    { answer_title: "г.	Красный берег.", answer_id_correct: false },
+
+                ]
+            }
+        ];
+        const questionsBlock10 = [
+            {
+                question_title: "9.	Он – Патриарший Экзарх всея Беларуси",
+                answer_variants: [
+                    { answer_title: "а.	Вениамин.", answer_id_correct: true },
+                    { answer_title: "б.	Павел", answer_id_correct: false },
+                    { answer_title: "в.	Кирилл", answer_id_correct: false },
+              
+                ]
+            }
+        ];
+        const questionsBlock11 = [
+            {
+                question_title: "10. Этот город – второй по величине в Беларуси",
+                answer_variants: [
+                    { answer_title: "а.	Брест.", answer_id_correct: false },
+                    { answer_title: "б.	Гродно.", answer_id_correct: false },
+                    { answer_title: "в.	Витебск.", answer_id_correct: false },
+                    { answer_title: "г.	Гомель.", answer_id_correct: true },
+                ]
+            }
+        ];
+
+        const questionsBlock12 = [
+            {
+                question_title: "11. Техника этого высококлассного белорусского бренда принимала участие в престижных автогонках, в том числе и знаменитом ралли «Дакар»",
+                answer_variants: [
+                    { answer_title: "а.МТЗ.", answer_id_correct: false },
+                    { answer_title: "б.МАЗ.", answer_id_correct: true },
+                    { answer_title: "в.БелАЗ.", answer_id_correct: false },
+                    { answer_title: "г.МЗКТ..", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock13 = [
+            {
+                question_title: "12. Это предприятие– флагман белорусской нефтехимии: именно здесь в феврале 1963 года был получен первый белорусский бензин. Сегодня это один из крупнейших химических комплексов страны, выпускающий более 80 наименований продуктов нефтепереработки.  С созданием этого огромного комплекса на карте Беларуси появился город",
+                answer_variants: [
+                    { answer_title: "а.	ОАО «Беларуськалий».", answer_id_correct: false },
+                    { answer_title: "б.	ОАО «Нафтан».", answer_id_correct: true },
+                    { answer_title: "в.	ОАО «Мозырский нефтеперерабатывающий завод».", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock14 = [
+            {
+                question_title: "13. Многие из ферм этого предприятия расположены вблизи Национального заповедника «Беловежская пуща» — одного из самых экологически чистых мест Беларуси",
+                answer_variants: [
+                    { answer_title: "а.	ОАО «Молочные горки».", answer_id_correct: false },
+                    { answer_title: "б.	ОАО «Бабушкина крынка».", answer_id_correct: false },
+                    { answer_title: "в.	ОАО «Савушкин продукт».", answer_id_correct: true },
+                ]
+            }
+        ];
+        const questionsBlock15 = [
+            {
+                question_title: "14. Именно на этом предприятии впервые выпустили самый любимый десерт сладкоежек, который стал «визитной карточкой» Республики Беларусь – глазированные сырки",
+                answer_variants: [
+                    { answer_title: "а.	ОАО «Минский молочный завод №1».", answer_id_correct: true },
+                    { answer_title: "б.	ОАО «Молочный мир».", answer_id_correct: false },
+                    { answer_title: "в.	ОАО «Беллакт».", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock16 = [
+            {
+                question_title: "15. Это белорусское название праздника летнего солнцестояния",
+                answer_variants: [
+                    { answer_title: "а.	Купала.", answer_id_correct: true },
+                    { answer_title: "б.	Петров день.", answer_id_correct: false },
+                    { answer_title: "в.	Дожинки.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock17 = [
+            {
+                question_title: "16. История этой белорусской фабрики насчитывает уже более 100 лет. Ежегодно она выпускает до 25 тысяч тонн сладостей более 200 наименований. Продукция знаменитого бренда – шоколад и конфеты, в рецептах которых используются только натуральные какао-продукты (обработка бобов осуществляется прямо на фабрике), порошок какао и шоколад ручной работы, карамель и драже",
+                answer_variants: [
+                    { answer_title: "а.	Спартак.", answer_id_correct: false },
+                    { answer_title: "б.	Слодыч.", answer_id_correct: false },
+                    { answer_title: "в.	Коммунарка.", answer_id_correct: true },
+                    { answer_title: "г.	Красный Пищевик.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock18 = [
+            {
+                question_title: "17. Эта белорусская теннисистка стала четвертым представителем Республики Беларусь, кто удостоился звания «Первая ракетка мира»",
+                answer_variants: [
+                    { answer_title: "а.	Виктория Азаренко.", answer_id_correct: false },
+                    { answer_title: "б.	Арина Соболенко.", answer_id_correct: true },
+                    { answer_title: "в.	Александра Саснович.", answer_id_correct: false },
+                   
+                ]
+            }
+        ];
+        const questionsBlock19 = [
+            {
+                question_title: "18. 4 июля 2023 г. был подписан Меморандум об обязательствах Республики Беларусь в целях получения статуса государства – члена этой международной организации. 4 июля 2024 г. на саммите в Астане процедура вступления была завершена, и Беларусь стала десятым по счету полноправным членом этой организации",
+                answer_variants: [
+                    { answer_title: "а.	БРИКС", answer_id_correct: false },
+                    { answer_title: "б.	ВТО.", answer_id_correct: false },
+                    { answer_title: "в.	ШОС.", answer_id_correct: true },
+                    { answer_title: "г.	ОДКБ.", answer_id_correct: false },
+                    { answer_title: "д.	ЕАЭС.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock20 = [
+            {
+                question_title: "19. Президента Республики Беларуси знают, как заядлого любителя хоккея, но так было не всегда. В школе и в студенчестве он начинал именно с этого вида спорта",
+                answer_variants: [
+                    { answer_title: "а.	Футбол", answer_id_correct: true },
+                    { answer_title: "б.	Баскетбол.", answer_id_correct: false },
+                    { answer_title: "в.	Волейбол.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock21 = [
+            {
+                question_title: "20. В основе орнамента на белорусском флаге лежит узор, вытканный в 1917 году Матрёной Маркевич. Изначально он предназначался для женской одежды. Что же символизирует этот узор?",
+                answer_variants: [
+                    { answer_title: "а.	Восходящее солнце.", answer_id_correct: true },
+                    { answer_title: "б.	Процветание.", answer_id_correct: false },
+                    { answer_title: "в.	Огонь", answer_id_correct: false },
+                    { answer_title: "г.	Рассвет", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock22 = [
+            {
+                question_title: "21. Когда в Республике Беларусь отмечается День Государственного флага, Государственного герба и Государственного гимна Республики Беларусь. ",
+                answer_variants: [
+                    { answer_title: "а.	Второе воскресенье мая.", answer_id_correct: true },
+                    { answer_title: "б.	15 марта.", answer_id_correct: false },
+                    { answer_title: "в.	Третья суббота ноября.", answer_id_correct: false },
+                  
+                ]
+            }
+        ];
+        const questionsBlock23 = [
+            {
+                question_title: "22. Он – лауреат Нобелевской премии по физике 2000 года за разработку полупроводниковых гетероструктур и создание быстрых опто- и микроэлектронных компонентов, академик. Родился в белорусском городе Витебске в белорусско-еврейской семье. Являлся почетным доктор многих университетов и почетным членом многих академий.",
+                answer_variants: [
+                    { answer_title: "а.	Жорес Алферов.", answer_id_correct: true },
+                    { answer_title: "б.	Игнат Домейко.", answer_id_correct: false },
+                    { answer_title: "в.	Николай Судзиловский.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock24 = [
+            {
+                question_title: "23. Когда Верховный Совет Республики Беларусь ввел должность Президента страны, законодательно превратив ее из парламентской в президентскую республику?",
+                answer_variants: [
+                    { answer_title: "а.	15 марта 1994 г.", answer_id_correct: true },
+                    { answer_title: "б.	23 июня 1994 г.", answer_id_correct: false },
+                    { answer_title: "в.	10 июля 1994 г.", answer_id_correct: false },
+               
+                ]
+            }
+        ];
+        const questionsBlock25 = [
+            {
+                question_title: "24. Декларация о государственном суверенитете Белорусской ССР была принята Верховным Советом Белорусской ССР",
+                answer_variants: [
+                    { answer_title: "а.	27 июля 1990 г.", answer_id_correct: true },
+                    { answer_title: "б.	19 сентября 1991 г.", answer_id_correct: false },
+                    { answer_title: "в.	25 августа 1991 г.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock26 = [
+            {
+                question_title: "25. Белорусская Советская Социалистическая Республика (БССР) была переименована в Республику Беларусь",
+                answer_variants: [
+                    { answer_title: "а.	15 марта 1994 г.", answer_id_correct: false },
+                    { answer_title: "б.	27 июля 1994 г.", answer_id_correct: false },
+                    { answer_title: "в.	19 сентября 1991 г. ", answer_id_correct: true },
+                ]
+            }
+        ];
+        const questionsBlock27 = [
+            {
+                question_title: "26. День независимости Республики Беларусь традиционно отмечают 3 июля, но так было не всегда. С 1991 по 1996 г. День независимости отмечали",
+                answer_variants: [
+                    { answer_title: "а.	9 мая.", answer_id_correct: false },
+                    { answer_title: "б.	15 марта.", answer_id_correct: false },
+                    { answer_title: "в.	27 июня.", answer_id_correct: true },
+                    { answer_title: "г.	28 июля.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock28 = [
+            {
+                question_title: "27. Этот завод располагается в Жлобине. Это не только один из важнейших экспортеров страны, но и уникальное предприятие в мировой металлургии, включающее все технологические этапы от производства стали до выпуска готовой продукции. ",
+                answer_variants: [
+                    { answer_title: "а.	МЗКТ", answer_id_correct: false },
+                    { answer_title: "б.	БМЗ.", answer_id_correct: true },
+                    { answer_title: "в.	МНПЗ.", answer_id_correct: false },
+                   
+                ]
+            }
+        ];
+        const questionsBlock29 = [
+            {
+                question_title: "28. В каком году проходил Чемпионат Мира по хоккею в Беларуси?",
+                answer_variants: [
+                    { answer_title: "а.	2010 г.", answer_id_correct: false },
+                    { answer_title: "б.	2014 г.", answer_id_correct: true },
+                    { answer_title: "в.	2019 г.", answer_id_correct: false },
+                    { answer_title: "г.	2016 г.", answer_id_correct: false },
+                    { answer_title: "д.	2012 г.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock30 = [
+            {
+                question_title: "29. Новое здание Национальной библиотеки было торжественно открыто в июне 2006 г. и стало визитной карточкой Республики Беларусь.  Сегодня это не только богатейшее собрание книг, но и огромный мультифункциональный центр, где совместились ультрасовременный дизайн, необычная архитектура и высокие технологии.  Какая компания выиграла конкурс на поставку систем хранения данных и серверов для Национальной библиотеки Беларуси?",
+                answer_variants: [
+                    { answer_title: "а.	Samsung.", answer_id_correct: false },
+                    { answer_title: "б.	HP.", answer_id_correct: true },
+                    { answer_title: "в.	Phillips. ", answer_id_correct: false },
+                    { answer_title: "г.	Toshiba.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock31 = [
+            {
+                question_title: "30. Сколько этажей в Национальной библиотеке Беларуси?",
+                answer_variants: [
+                    { answer_title: "а.	21.", answer_id_correct: false },
+                    { answer_title: "б.	30.", answer_id_correct: false },
+                    { answer_title: "в.	27.", answer_id_correct: false },
+                    { answer_title: "г.	23.", answer_id_correct: true },
+                ]
+            }
+        ];
+        const questionsBlock32 = [
+            {
+                question_title: "31. Именно этот университет в День знаний, 1 сентября 1994 г., посетил Президент",
+                answer_variants: [
+                    { answer_title: "а.	Белорусский государственный педагогический университет им. М. Танка.", answer_id_correct: true },
+                    { answer_title: "б.	Белорусский государственный университет.", answer_id_correct: false },
+                    { answer_title: "в.	Белорусский государственный медицинский университет.", answer_id_correct: false },
+                    { answer_title: "г.	Минский государственный лингвистический университет.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock33 = [
+            {
+                question_title: "32. Свой первый зарубежный визит Президент Республики Беларусь после вступления в должность главы государства совершил в",
+                answer_variants: [
+                    { answer_title: "а.	Москву.", answer_id_correct: true },
+                    { answer_title: "б.	Ташкент.", answer_id_correct: false },
+                    { answer_title: "в.	Пекин.", answer_id_correct: false },
+                   
+                ]
+            }
+        ];
+        const questionsBlock34 = [
+            {
+                question_title: "33. Сколько колосьев на Государственном Гербе Республики Беларусь?",
+                answer_variants: [
+                    { answer_title: "а.	6.", answer_id_correct: false },
+                    { answer_title: "б.	8.", answer_id_correct: true },
+                    { answer_title: "в.	10.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock35 = [
+            {
+                question_title: "34. Согласно Конституции Республики Беларусь «источником государственной власти и носителем суверенитета в Республике Беларусь является…»",
+                answer_variants: [
+                    { answer_title: "а.	Президент.", answer_id_correct: false },
+                    { answer_title: "б.	Парламент.", answer_id_correct: false },
+                    { answer_title: "в.	Всебелорусское народное собрание.", answer_id_correct: false },
+                    { answer_title: "г.	Народ", answer_id_correct: true },
+                ]
+            }
+        ];
+        const questionsBlock36 = [
+            {
+                question_title: "35. Сколько человек удостоены звания «Герой Беларуси»?",
+                answer_variants: [
+                    { answer_title: "а.	8.", answer_id_correct: false },
+                    { answer_title: "б.	14.", answer_id_correct: true },
+                    { answer_title: "в.	12.", answer_id_correct: false },
+                    { answer_title: "г.	10.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock37 = [
+            {
+                question_title: "36. Согласно ст. 321 Конституции Республики Беларусь, «Государство способствует духовному, нравственному, интеллектуальному и физическому развитию …»",
+                answer_variants: [
+                    { answer_title: "а.	Родителей", answer_id_correct: false },
+                    { answer_title: "б.	Детей.", answer_id_correct: false },
+                    { answer_title: "в.	Молодежи.", answer_id_correct: true },
+                    { answer_title: "г.	Учащихся.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock38 = [
+            {
+                question_title: "37. Устав ООН был подписан 26 июня 1945 года на Конференции Объединенных Наций в Сан-Франциско представителями 50 государств, в том числе Беларуси. Подпись под документом от Беларуси поставил…",
+                answer_variants: [
+                    { answer_title: "а.	Кузьма Киселёв.", answer_id_correct: true },
+                    { answer_title: "б.	Кирилл Мазуров.", answer_id_correct: false },
+                    { answer_title: "в.	Николай Авхимович.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock39 = [
+            {
+                question_title: "38. Кто являлся первым Министром иностранных дел Республики Беларусь?",
+                answer_variants: [
+                    { answer_title: "а.	Урал Рамдракович Латыпов.", answer_id_correct: false },
+                    { answer_title: "б.	Пётр Кузьмич Кравченко.", answer_id_correct: true },
+                    { answer_title: "в.	Владимир Леонович Сенько.", answer_id_correct: false },
+                    { answer_title: "г.	Михаил Михайлович Хвостов.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock40 = [
+            {
+                question_title: "39. С каким количеством стран на сегодняшний день Республика Беларусь поддерживает дипломатические отношения?",
+                answer_variants: [
+                    { answer_title: "а.	Более 180.", answer_id_correct: true },
+                    { answer_title: "б.	175.", answer_id_correct: false },
+                    { answer_title: "в.	154.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock41 = [
+            {
+                question_title: "40. Когда Беларусь официально присоединилась к ДНЯО, став первым государством, добровольно отказавшимся от возможности обладания ядерным оружием?",
+                answer_variants: [
+                    { answer_title: "а.	Июль 1993 г.", answer_id_correct: true },
+                    { answer_title: "б.	Декабрь 1994 г.", answer_id_correct: false },
+                    { answer_title: "в.	Ноябрь 1996 г.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock42 = [
+            {
+                question_title: "41. Высший представительный орган народовластия Республики Беларусь, определяющий стратегические направления развития общества и государства – это …",
+                answer_variants: [
+                    { answer_title: "а.	Парламент Республики Беларусь.", answer_id_correct: false },
+                    { answer_title: "б.	Всебелорусское народное собрание.", answer_id_correct: true },
+                    { answer_title: "в.	Конституционный Суд Республики .", answer_id_correct: false },
+                   
+                ]
+            }
+        ];
+        const questionsBlock43 = [
+            {
+                question_title: "42. Эта национальная премия была учреждена в 2011 г.",
+                answer_variants: [
+                    { answer_title: "а.	Национальная театральная премия Беларуси.", answer_id_correct: true },
+                    { answer_title: "б.	Национальная литературная премия Беларуси.", answer_id_correct: false },
+                    { answer_title: "в.	Национальная премия Беларуси в области искусства.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock44 = [
+            {
+                question_title: "43. Ежегодный фестиваль-ярмарка тружеников села в Беларуси:",
+                answer_variants: [
+                    { answer_title: "а.	«Дажынкi».", answer_id_correct: true },
+                    { answer_title: "б.	«Лiстапад».", answer_id_correct: false },
+                    { answer_title: "в.	«Купалле»..", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock45 = [
+            {
+                question_title: "44. Какое белорусское ремесло включено в Список нематериального культурного наследия человечества?",
+                answer_variants: [
+                    { answer_title: "а.	Кузнечное дело.", answer_id_correct: false },
+                    { answer_title: "б.	Соломоплетение.", answer_id_correct: true },
+                    { answer_title: "в.	Гончарство.", answer_id_correct: false },
+                    { answer_title: "г.	Резьба по дереву.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock46 = [
+            {
+                question_title: "45. О ком повествует поэт Алесь Ставер в стихотворении «Каб любіць Беларусь нашу мілую»?",
+                answer_variants: [
+                    { answer_title: "а.	Зубр", answer_id_correct: false },
+                    { answer_title: "б.	Лебедь.", answer_id_correct: false },
+                    { answer_title: "г.	Журавль.", answer_id_correct: true },
+                   
+                ]
+            }
+        ];
+        const questionsBlock47 = [
+            {
+                question_title: "46. В каком году белорусский рубль официально стал национальной валютой Республики Беларусь?",
+                answer_variants: [
+                    { answer_title: "а.	1991 г.", answer_id_correct: false },
+                    { answer_title: "б.	1994 г.", answer_id_correct: true },
+                    { answer_title: "в.	1996 г.", answer_id_correct: false },
+                    { answer_title: "г.	1992 г.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock48 = [
+            {
+                question_title: "47. Эта птица – символ чистоты и возрождения Беларуси",
+                answer_variants: [
+                    { answer_title: "а.	Аист", answer_id_correct: true },
+                    { answer_title: "б.	Лебедь", answer_id_correct: false },
+                    { answer_title: "в.	Сова", answer_id_correct: false },
+                    { answer_title: "г.	Голубь.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock49 = [
+            {
+                question_title: "48. Какой знаменитый дворянский род оставил самый заметный культурно-архитектурный след на территории Беларуси?",
+                answer_variants: [
+                    { answer_title: "а.	Радзивиллы.", answer_id_correct: true },
+                    { answer_title: "б.	Сапеги", answer_id_correct: false },
+                    { answer_title: "в.	Шереметьевы.", answer_id_correct: false },
+                    { answer_title: "г.	Машеровы.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock50 = [
+            {
+                question_title: "49. Чем известен на весь мир город Слуцк?",
+                answer_variants: [
+                    { answer_title: "а.	Слуцкими поясами.", answer_id_correct: true },
+                    { answer_title: "б.	Молочными продуктами.", answer_id_correct: false },
+                    { answer_title: "в.	Древней гимназией.", answer_id_correct: false },
+                ]
+            }
+        ];
+        const questionsBlock51 = [
+            {
+                question_title: "50. Кто из православных святых считается самой первой заступницей и небесной покровительницей белорусского народа и всей Беларуси?",
+                answer_variants: [
+                    { answer_title: "а.	Иулиания Ольшанская.", answer_id_correct: false },
+                    { answer_title: "б.	Евфросиния Полоцкая.", answer_id_correct: true },
+                    { answer_title: "в.	София Слуцкая.", answer_id_correct: false },
+                    { answer_title: "г.	Преподобная Харитина.", answer_id_correct: false },
+                ]
+            }
+        ];
+
+
+        const answers = []; // Хранение ответов
+
+        // Переход между блоками
+        // function nextBlock(currentBlock) {
+        //   document.getElementById(`block${currentBlock}`).classList.remove("hidden");
+        //   document.getElementById(`block${currentBlock + 1}`).classList.add("hidden");
+        //   if (currentBlock === 1) renderQuestions("questions", questionsBlock2);
+        //   if (currentBlock === 2) renderQuestions("questions2", questionsBlock3);
+        // }
+
+        // Tailwind Utility Classes added to blocks
+        function validateAndNextBlock(currentBlock) {
+            if (currentBlock === 1) {
+                const fio = document.getElementById("fio").value.trim();
+                const group = document.getElementById("group").value.trim();
+                const course = document.getElementById("course").value.trim();
+                const form = document.getElementById("form").value.trim();
+
+                if (!fio || !group || !course || !form) {
+                    alert("Пожалуйста, заполните все поля!");
+                    return;
+                }
+            }
+
+            nextBlock(currentBlock);
+        }
+        function nextBlock(currentBlock) {
+            // Скрыть текущий блок
+            document.getElementById(`block${currentBlock}`).classList.remove('active');
+            document.getElementById(`block${currentBlock}`).classList.add('hidden');
+
+            // Показать следующий блок
+            document.getElementById(`block${currentBlock + 1}`).classList.remove('hidden');
+            document.getElementById(`block${currentBlock + 1}`).classList.add('active');
+
+            // Рендеринг вопросов для каждого блока
+            if (currentBlock === 1) renderQuestions("questions", questionsBlock2, "block2");
+            if (currentBlock === 2) renderQuestions("questions2", questionsBlock3, "block3");
+            if (currentBlock === 3) renderQuestions("questions3", questionsBlock4, "block4");
+            if (currentBlock === 4) renderQuestions("questions4", questionsBlock5, "block5");
+            if (currentBlock === 5) renderQuestions("questions5", questionsBlock6, "block6");
+            if (currentBlock === 6) renderQuestions("questions6", questionsBlock7, "block7");
+            if (currentBlock === 7) renderQuestions("questions7", questionsBlock8, "block8");
+            if (currentBlock === 8) renderQuestions("questions8", questionsBlock9, "block9");
+            if (currentBlock === 9) renderQuestions("questions9", questionsBlock10, "block10");
+            if (currentBlock === 10) renderQuestions("questions10", questionsBlock11, "block11");
+            if (currentBlock === 11) renderQuestions("questions11", questionsBlock12, "block12");
+            if (currentBlock === 12) renderQuestions("questions12", questionsBlock13, "block13");
+            if (currentBlock === 13) renderQuestions("questions13", questionsBlock14, "block14");
+            if (currentBlock === 14) renderQuestions("questions14", questionsBlock15, "block15");
+            if (currentBlock === 15) renderQuestions("questions15", questionsBlock16, "block16");
+            if (currentBlock === 16) renderQuestions("questions16", questionsBlock17, "block17");
+            if (currentBlock === 17) renderQuestions("questions17", questionsBlock18, "block18");
+            if (currentBlock === 18) renderQuestions("questions18", questionsBlock19, "block19");
+            if (currentBlock === 19) renderQuestions("questions19", questionsBlock20, "block20");
+            if (currentBlock === 20) renderQuestions("questions20", questionsBlock21, "block21");
+            if (currentBlock === 21) renderQuestions("questions21", questionsBlock22, "block22");
+            if (currentBlock === 22) renderQuestions("questions22", questionsBlock23, "block23");
+            if (currentBlock === 23) renderQuestions("questions23", questionsBlock24, "block24");
+            if (currentBlock === 24) renderQuestions("questions24", questionsBlock25, "block25");
+            if (currentBlock === 25) renderQuestions("questions25", questionsBlock26, "block26");
+            if (currentBlock === 26) renderQuestions("questions26", questionsBlock27, "block27");
+            if (currentBlock === 27) renderQuestions("questions27", questionsBlock28, "block28");
+            if (currentBlock === 28) renderQuestions("questions28", questionsBlock29, "block29");
+            if (currentBlock === 29) renderQuestions("questions29", questionsBlock30, "block30");
+            if (currentBlock === 30) renderQuestions("questions30", questionsBlock31, "block31");
+            if (currentBlock === 31) renderQuestions("questions31", questionsBlock32, "block32");
+            if (currentBlock === 32) renderQuestions("questions32", questionsBlock33, "block33");
+            if (currentBlock === 33) renderQuestions("questions33", questionsBlock34, "block34");
+            if (currentBlock === 34) renderQuestions("questions34", questionsBlock35, "block35");
+            if (currentBlock === 35) renderQuestions("questions35", questionsBlock36, "block36");
+            if (currentBlock === 36) renderQuestions("questions36", questionsBlock37, "block37");
+            if (currentBlock === 37) renderQuestions("questions37", questionsBlock38, "block38");
+            if (currentBlock === 38) renderQuestions("questions38", questionsBlock39, "block39");
+            if (currentBlock === 39) renderQuestions("questions39", questionsBlock40, "block40");
+            if (currentBlock === 40) renderQuestions("questions40", questionsBlock41, "block41");
+            if (currentBlock === 41) renderQuestions("questions41", questionsBlock42, "block42");
+            if (currentBlock === 42) renderQuestions("questions42", questionsBlock43, "block43");
+            if (currentBlock === 43) renderQuestions("questions43", questionsBlock44, "block44");
+            if (currentBlock === 44) renderQuestions("questions44", questionsBlock45, "block45");
+            if (currentBlock === 45) renderQuestions("questions45", questionsBlock46, "block46");
+            if (currentBlock === 46) renderQuestions("questions46", questionsBlock47, "block47");
+            if (currentBlock === 47) renderQuestions("questions47", questionsBlock48, "block48");
+            if (currentBlock === 48) renderQuestions("questions48", questionsBlock49, "block49");
+            if (currentBlock === 49) renderQuestions("questions49", questionsBlock50, "block50");
+            if (currentBlock === 50) renderQuestions("questions50", questionsBlock51, "block51");
+
+
+        }
+
+        // document.querySelectorAll('.block').forEach((block) => block.classList.add('hidden'));
+        // document.querySelector('.block.active').classList.remove('hidden');
+
+        // function nextBlock(currentBlock) {
+        //   document.getElementById(`block${currentBlock}`).classList.add('hidden');
+        //   document.getElementById(`block${currentBlock + 1}`).classList.remove('hidden');
+        //   if (currentBlock === 1) renderQuestions("questions", questionsBlock2);
+        //      if (currentBlock === 2) renderQuestions("questions2", questionsBlock3);
+        // }
+
+        // Рендер вопросов
+        function renderQuestions(containerId, questions, blockPrefix) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = ""; // Очистить старый контент
+
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.innerHTML = `<h3 class="font-medium text-lg mb-2">${q.question_title}</h3>`;
+                q.answer_variants.forEach((answer, aIndex) => {
+                    const radio = `
+                <label class="block">
+                    <input type="radio" name="${blockPrefix}_q${index}" value="${answer.answer_id_correct}" class="mr-2">
+                    ${answer.answer_title}
+                </label>`;
+                    questionDiv.innerHTML += radio;
+                });
+                container.appendChild(questionDiv);
+            });
+        }
+
+        function sendToTelegram(result) {
+            const botToken = "7513376393:AAG1fj3u-3IUxsaKnj7nDPAgVFO7MH178hk";
+            const chatId = "-4511060793"; // ID чата, куда отправить сообщение
+            const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+            // Подготовка содержимого сообщения
+            const message = `
+Студент: ${result.student}
+Группа: ${result.group}
+Курс: ${result.course}
+Форма обучения: ${result.form}
+Правильных ответов: ${result.answers_correct}
+  `;
+
+            // Отправка POST-запроса
+            fetch(apiUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message,
+                    parse_mode: "Markdown" // или "HTML", если требуется форматирование
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        alert("Результат успешно отправлен в Telegram!");
+                    } else {
+                        alert("Ошибка при отправке: " + data.description);
+                    }
+                })
+                .catch(error => {
+                    console.error("Ошибка:", error);
+                    alert("Не удалось отправить данные в Telegram.");
+                });
+        }
+
+
+
+
+        // Завершение формы
+        function submitForm() {
+            const fio = document.getElementById("fio").value;
+            const group = document.getElementById("group").value;
+            const course = document.getElementById("course").value;
+            const form = document.getElementById("form").value;
+
+            let correctAnswers = 0;
+
+            // Проверка ответов блока 2
+            questionsBlock2.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block2_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+
+            // Проверка ответов блока 3
+            questionsBlock3.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block3_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock4.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block4_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock5.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block5_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock6.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block6_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock7.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block7_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock8.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block8_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock9.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block9_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock10.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block10_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock11.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block11_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock12.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block12_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock13.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block13_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock14.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block14_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock15.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block15_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock16.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block16_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock17.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block17_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock18.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block18_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock19.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block19_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock20.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block20_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock21.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block21_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock22.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block22_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock23.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block23_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock24.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block24_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock25.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block25_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock26.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block26_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock27.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block27_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock28.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block28_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock29.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block29_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock30.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block30_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock31.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block31_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock32.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block32_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock33.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block33_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock34.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block34_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock35.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block35_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock36.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block36_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock37.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block37_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock38.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block38_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock39.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block39_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock40.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block40_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock41.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block41_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock42.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block42_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock43.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block43_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock44.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block44_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock45.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block45_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock46.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block46_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock47.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block47_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock48.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block48_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock49.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block49_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock50.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block50_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+            questionsBlock51.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="block51_q${index}"]:checked`);
+                if (selected && selected.value === "true") correctAnswers++;
+            });
+
+            const result = {
+                student: fio,
+                course: course,
+                group: group,
+                form: form,
+                answers_correct: correctAnswers
+            };
+
+            sendToTelegram(result);
+
+            console.log(result);
+            alert(`Результаты отправлены!\n\nФИО: ${fio}\nГруппа: ${group}\nКурс: ${course}\nФорма обучения: ${form}\nПравильных ответов: ${correctAnswers}`);
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
